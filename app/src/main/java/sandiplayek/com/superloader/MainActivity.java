@@ -22,7 +22,7 @@ import superloader.sandiplayek.com.quickloader.parser.PostDataParserObjectReques
 import superloader.sandiplayek.com.quickloader.permissions.SinglePremissionGranter;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    String url="http://dev-api.psspluat.online/AEPS/?action=login";
+    String url="";  //Enter Here Your Login URL
     String pass="",phone="", succ ="",msg="";
     EditText et_ph,et_pass;
     Button btn_chk;
@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void check_login(){
         HashMap<String,String>hashMap=new HashMap<>();
-        hashMap.put("username", phone);
-        hashMap.put("password", pass);
+        hashMap.put("", phone);     //Enter KEY value for phone and pass
+        hashMap.put("", pass);
         new PostDataParserObjectRequest(MainActivity.this, url, hashMap, true, new PostDataParserObjectRequest.OnPostObjectResponseListner() {
             @Override
             public void onPostObjectResponse(JSONObject response) {
